@@ -20,7 +20,7 @@ namespace SeleniumFirst
         public void Initialize()
         {
             //navigate to google page
-            driver.Navigate().GoToUrl("https://www.google.com");
+            driver.Navigate().GoToUrl("http://executeautomation.com/demosite/index.html?UserName=&Password=&Login=Login");
             Console.WriteLine("Opened URL");
         }
 
@@ -28,14 +28,26 @@ namespace SeleniumFirst
         public void ExecuteTest()
         {
 
+
+            //Title
+            SeleniumSetMethods.SelectDropDown(driver, "TitleId", "Mr.", "Id");
+
+            //Initial
+            SeleniumSetMethods.EnterText(driver, "Initial", "executeA", "Name");
+
+            //Click Save
+            SeleniumSetMethods.Click(driver, "Save", "Name");
+            
+
             // Enter(element,value,type) <-- put elements in new class
 
-
+            /*
             //Find the element
             el = driver.FindElement(By.Name("q"));
 
             //Perform ops
             el.SendKeys("unityconstruct");
+            */
 
             Console.WriteLine(driver.Title);          //var title = driver.Title;
             Console.WriteLine("Executed Test");
