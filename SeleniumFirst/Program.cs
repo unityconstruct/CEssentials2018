@@ -8,8 +8,7 @@ namespace SeleniumFirst
 {
     class Program
     {
-        //Create the reference for the browser
-        IWebDriver driver = new ChromeDriver(Directory.GetCurrentDirectory());
+
         static IWebElement el;
 
         /*static void Main(string[] args)
@@ -19,8 +18,14 @@ namespace SeleniumFirst
         [OneTimeSetUp]
         public void Initialize()
         {
+            //Create the reference for the browser
+            //IWebDriver driver = new ChromeDriver(Directory.GetCurrentDirectory());
+            //replace ALL instances of driver with PropertiesCollection.driver
+            //remove method args for driver in SeleniumGet/SetMethods
+            PropertiesCollection.driver = new ChromeDriver(Directory.GetCurrentDirectory());
+
             //navigate to google page
-            driver.Navigate().GoToUrl("http://executeautomation.com/demosite/index.html?UserName=&Password=&Login=Login");
+            PropertiesCollection.driver.Navigate().GoToUrl("http://executeautomation.com/demosite/index.html?UserName=&Password=&Login=Login");
             Console.WriteLine("Opened URL");
         }
 
@@ -31,32 +36,32 @@ namespace SeleniumFirst
             // Enter(element,value,type) <-- put elements in new class
 
             //Title
-            SeleniumSetMethods.SelectDropDown(driver, "TitleId", "Mr.", "Id");
+            SeleniumSetMethods.SelectDropDown("TitleId", "Mr.", PropertyType.Id);
 
             //Initial
-            SeleniumSetMethods.EnterText(driver, "Initial", "executeA", "Name");
+            SeleniumSetMethods.EnterText("Initial", "executeA", PropertyType.Name);
 
-            Console.WriteLine("The value from my Title is:" + SeleniumGetMethods.GetText(driver, "TitleId", "executeA", "Id"));
-            Console.WriteLine("The value from my Initial is:" + SeleniumGetMethods.GetText(driver, "Initial", "executeA", "Name"));
+            Console.WriteLine("The value from my Title is:" + SeleniumGetMethods.GetText("TitleId", PropertyType.Id));
+            Console.WriteLine("The value from my Initial is:" + SeleniumGetMethods.GetText("Initial", PropertyType.Name));
 
             //Click Save
-            SeleniumSetMethods.Click(driver, "Save", "Name");
+            SeleniumSetMethods.Click("Save", PropertyType.Name);
 
-            Console.WriteLine(driver.Title);          //var title = driver.Title;
+            Console.WriteLine(PropertiesCollection.driver.Title);          //var title = driver.Title;
             Console.WriteLine("Executed Test");
         }
 
 
-        [Test]
-        public void NextTest()
-        {
-            Console.WriteLine("Next Test");
-        }
+        //[Test]
+        //public void NextTest()
+        //{
+        //    Console.WriteLine("Next Test");
+        //}
 
         [OneTimeTearDown]
         public void CleanUp()
         {
-            driver.Close();
+            PropertiesCollection.driver.Close();
             Console.WriteLine("Closed the browser");
         }
     }
