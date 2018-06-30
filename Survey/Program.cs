@@ -10,12 +10,8 @@ namespace Basics
             //Survey.AskSurvey();
             //Passcode.AuthPasscode();
             Run();
-
-
-
-
-
         }
+
         public static void Run()
         {
             //EvaluationsAndExpressions_Runner();
@@ -30,8 +26,22 @@ namespace Basics
 
             //CharsAndStrings_Runner();
 
-            Scope_Runner();
+            //Scope_Runner();
 
+            Book_Runner();
+
+        }
+
+        private static void Book_Runner()
+        {
+            Basics.Book b = new Basics.Book();
+            b.Title = "New Book Title";
+            b.Author = "ME MAN!";
+            b.UpateTime = "June30,2018";
+
+            Console.WriteLine(b.Title);
+            Console.WriteLine(b.Author);
+            Console.WriteLine(b.id);
         }
 
         private static void DataTypes_Runner()
@@ -104,6 +114,20 @@ namespace Basics
         private static void Scope_Runner()
         {
             Basics.Scope.ScopePublic();
+            Console.WriteLine("Scope.strPublic = {0}", Basics.Scope.strPublic);
+            Console.WriteLine("Scope.intPublic = {0}",Basics.Scope.intPublic);
+
+            // calls methods to change the private fields of the Scope class
+            Console.WriteLine("Scope.GetIntPrivate = {0}", Basics.Scope.GetIntPrivate());
+            Console.WriteLine("Scope.GetStringPrivate = {0}", Basics.Scope.GetStringPrivate());
+            Basics.Scope.SetIntPrivate(99);
+            Basics.Scope.SetStringPrivate("NEW STRING SET");
+            Console.WriteLine("Scope.SetIntPrivate = {0}", Basics.Scope.GetIntPrivate());
+            Console.WriteLine("Scope.SetStringPrivate = {0}", Basics.Scope.GetStringPrivate());
+
         }
+
+
+
     }
 }

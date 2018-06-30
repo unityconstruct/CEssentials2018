@@ -6,10 +6,10 @@ namespace Basics.Basics
 {
     class Scope
     {
-        private int intPrivate = 1;
-        public int intPubcic = 2;
-        private string strPrivate = "private string";
-        public string strPublic = "public string";
+        private static int intPrivate = 1;
+        public static int intPublic = 2;
+        private static string strPrivate = "private string";
+        public static string strPublic = "public string";
 
         public static void ScopePublic()
         {
@@ -31,8 +31,26 @@ namespace Basics.Basics
             //    // causes error
             //    int k = 2; 
             //}
+        }
 
+        public static int GetIntPrivate()
+        {
+            return intPrivate;
+        }
 
+        internal static string GetStringPrivate()
+        {
+            return strPrivate;
+        }
+
+        public static void SetIntPrivate(int i)
+        {
+            intPrivate = i;
+        }
+
+        internal static void SetStringPrivate(string s)
+        {
+            strPrivate = s;
         }
 
 
