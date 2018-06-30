@@ -25,8 +25,17 @@ namespace Basics
             Basics.EvaluationsAndExpressions.TernaryOperatorEx();
             Basics.EvaluationsAndExpressions.OperatorPrecedence();
             Basics.EvaluationsAndExpressions.IsEvaluation();
+            Basics.EvaluationsAndExpressions.SwitchStatement();
+
             Basics.ConstantsAndEnumerations.Constants();
             Basics.ConstantsAndEnumerations.Enumerations();
+
+            Basics.Loops.LoopWhile();
+            Basics.Loops.LoopDoWhile();            
+            Basics.Loops.LoopFor();
+            Basics.Loops.LoopForEach();
+            Basics.Loops.LoopContinue();
+            Basics.Loops.LoopBreak();
         }
     }
 }

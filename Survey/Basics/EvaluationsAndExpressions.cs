@@ -221,5 +221,28 @@ namespace Basics.Basics
 
 
         }
+
+        public static void SwitchStatement()
+        {
+            string evalString = "April";
+
+            switch (evalString)
+            {
+                case "January":
+                    Console.WriteLine("Month is Jan: {0}", evalString);
+                    break;
+                case "February":
+                    Console.WriteLine("Month is Feb: {0}", evalString);
+                    break;
+                case "March":
+                    Console.WriteLine("Month is Mar: {0}", evalString);
+                    break;
+                case "April":
+                    Console.WriteLine("Month is April: {0}", evalString);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
