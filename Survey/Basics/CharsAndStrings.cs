@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Basics.Basics
 {
-    class StringEx
+    class CharsAndStrings
     {
 
         public static void StringConcatenate()

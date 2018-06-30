@@ -36,6 +36,27 @@ namespace Basics
             Basics.Loops.LoopForEach();
             Basics.Loops.LoopContinue();
             Basics.Loops.LoopBreak();
+
+            Console.WriteLine("MethodReturnsInt: {0}", Basics.Methods.MethodReturnsInt());
+            Console.WriteLine("MethodReturnsString: {0}", Basics.Methods.MethodReturnsString());
+            Console.WriteLine("MethodReturnsBool: {0}", Basics.Methods.MethodReturnsBool());
+            Basics.Methods.MethodCallsPrivate();
+            Basics.Methods.MethodInputArgs(1,"myString");
+
+            Basics.DataTypes.DataTypeBool();
+            //Basics.DataTypes.DataTypeByte();
+            //Basics.DataTypes.DataTypeChar();
+            //Basics.DataTypes.DataTypeDate();
+            //Basics.DataTypes.DataTypeDecimal();
+            //Basics.DataTypes.DataTypeDouble();
+            //Basics.DataTypes.DataTypeInt();
+            Basics.DataTypes.DataTypeLong();
+            //Basics.DataTypes.DataTypeObject();
+            //Basics.DataTypes.DataTypeString();
+
+
+
+
         }
     }
 }
