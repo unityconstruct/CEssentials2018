@@ -146,6 +146,79 @@ namespace Basics.Basics
 
         public static void OperatorPrecedence()
         {
+            // * / %
+            double result;
+
+            Console.WriteLine("integer1 = {0}, integer2 = {1}", integer1, integer2);
+
+            result = integer1 * integer2 + 100;
+            Console.WriteLine("integer1 * integer2 + 100 = {0}", result);
+
+            result = 100 + integer1 * integer2;
+            Console.WriteLine("100 + integer1 * integer2 = {0}", result);
+
+            result = integer1 / integer2 - 100;
+            Console.WriteLine("integer1 / integer2 - 100 = {0}", result);
+
+            result = 100 - integer1 / integer2;
+            Console.WriteLine("100 - integer1 / integer2 = {0}", result);
+
+
+            result = integer1 % integer2 + 100;
+            Console.WriteLine("integer1 % integer2 + 100 = {0}", result);
+
+            result = 100 + integer1 % integer2;
+            Console.WriteLine("100 + integer1 % integer2 = {0}", result);
+        }
+
+        public static void IsEvaluation()
+        {
+            // if type is String
+            if (string2 is Object)
+            {
+                Console.WriteLine("if (string is Object) = true");
+            } else
+            {
+                Console.WriteLine("if (string is Object = false)");
+            }
+        }
+
+        public static void AsEvaluation()
+        {
+            //PENDING
+            //void myFunctions(object obj)
+            //{
+            //    // if type is Employee
+            //    if (obj is Employee)
+            //    {
+            //        // not clear on the purpose????
+            //        Employee emp = obj as Employee; // null if can’t be done
+            //        string name = emp.FirstName;
+            //    }
+            //}
+        }
+
+        public static void OperatorPrecedenceEx()
+        {
+            // PENDING
+
+
+            // * / %
+
+            // + -
+            
+            // < > <= => is as
+
+            // == =!
+
+            // AND &&
+
+            // OR ||
+
+            // Ternary ? :
+
+            // Assignment  = *= %= += -=
+
 
         }
     }

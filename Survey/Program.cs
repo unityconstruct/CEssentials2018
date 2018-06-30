@@ -23,6 +23,10 @@ namespace Basics
             Basics.EvaluationsAndExpressions.AndOrEx();
             Basics.EvaluationsAndExpressions.PrefixPostfix();
             Basics.EvaluationsAndExpressions.TernaryOperatorEx();
+            Basics.EvaluationsAndExpressions.OperatorPrecedence();
+            Basics.EvaluationsAndExpressions.IsEvaluation();
+            Basics.ConstantsAndEnumerations.Constants();
+            Basics.ConstantsAndEnumerations.Enumerations();
         }
     }
 }
