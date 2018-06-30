@@ -1,4 +1,5 @@
 ﻿using System;
+using Basics;
 
 namespace Basics
 {
@@ -7,14 +8,21 @@ namespace Basics
         static void Main(string[] args)
         {
             //Survey.AskSurvey();
-            Passcode.AuthPasscode();
+            //Passcode.AuthPasscode();
+            Run();
 
 
 
 
 
-
-
+        }
+        public static void Run()
+        {
+            //Basics.StringEx.StringConcatenate();
+            Basics.EvaluationsAndExpressions.IfThenElseEx();
+            Basics.EvaluationsAndExpressions.AndOrEx();
+            Basics.EvaluationsAndExpressions.PrefixPostfix();
+            Basics.EvaluationsAndExpressions.TernaryOperatorEx();
         }
     }
 }
