@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.unityconstruct.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.unityconstruct.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.unityconstruct.org/">
+      <s:element name="ConvertFahernheitToCelsius">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Farhenheit" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConvertFahernheitToCelsiusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ConvertFahernheitToCelsiusResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConvertCelsiusToFahernheit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Celsius" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConvertCelsiusToFahernheitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ConvertCelsiusToFahernheitResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConvertFahernheitToCelsiusSoapIn">
+    <wsdl:part name="parameters" element="tns:ConvertFahernheitToCelsius" />
+  </wsdl:message>
+  <wsdl:message name="ConvertFahernheitToCelsiusSoapOut">
+    <wsdl:part name="parameters" element="tns:ConvertFahernheitToCelsiusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConvertCelsiusToFahernheitSoapIn">
+    <wsdl:part name="parameters" element="tns:ConvertCelsiusToFahernheit" />
+  </wsdl:message>
+  <wsdl:message name="ConvertCelsiusToFahernheitSoapOut">
+    <wsdl:part name="parameters" element="tns:ConvertCelsiusToFahernheitResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TemperatureConverterSoap">
+    <wsdl:operation name="ConvertFahernheitToCelsius">
+      <wsdl:input message="tns:ConvertFahernheitToCelsiusSoapIn" />
+      <wsdl:output message="tns:ConvertFahernheitToCelsiusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertCelsiusToFahernheit">
+      <wsdl:input message="tns:ConvertCelsiusToFahernheitSoapIn" />
+      <wsdl:output message="tns:ConvertCelsiusToFahernheitSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TemperatureConverterSoap" type="tns:TemperatureConverterSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConvertFahernheitToCelsius">
+      <soap:operation soapAction="http://www.unityconstruct.org/ConvertFahernheitToCelsius" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertCelsiusToFahernheit">
+      <soap:operation soapAction="http://www.unityconstruct.org/ConvertCelsiusToFahernheit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TemperatureConverterSoap12" type="tns:TemperatureConverterSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConvertFahernheitToCelsius">
+      <soap12:operation soapAction="http://www.unityconstruct.org/ConvertFahernheitToCelsius" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertCelsiusToFahernheit">
+      <soap12:operation soapAction="http://www.unityconstruct.org/ConvertCelsiusToFahernheit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TemperatureConverter">
+    <wsdl:port name="TemperatureConverterSoap" binding="tns:TemperatureConverterSoap">
+      <soap:address location="http://localhost:49294/TemperatureConverter.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TemperatureConverterSoap12" binding="tns:TemperatureConverterSoap12">
+      <soap12:address location="http://localhost:49294/TemperatureConverter.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
