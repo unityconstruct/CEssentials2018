@@ -11,7 +11,7 @@ using MySql.Data.MySqlClient;
 
 namespace DatabaseFormApp
 {
-    public partial class Form1 : Form
+    public partial class DBForm : Form
     {
         MySqlConnection cnx = new MySqlConnection("server=192.168.0.80; port=3306; userid=outlaw1; password=outlaw1; database=outlaw; Encrypt=false;");
         MySqlCommand cmd = new MySqlCommand();
@@ -19,7 +19,7 @@ namespace DatabaseFormApp
         MySqlDataReader reader;
         // for instert/delete/update ie.. non-'select' queries
         //MySqlDataReader queryResult = cmd.ExecuteQuery();
-        public Form1()
+        public DBForm()
         {
             InitializeComponent();
         }
@@ -72,6 +72,11 @@ namespace DatabaseFormApp
                 lblResult.Text = "Can't Execute Query";
                 //Console.WriteLine("Can't Execute Query...");
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

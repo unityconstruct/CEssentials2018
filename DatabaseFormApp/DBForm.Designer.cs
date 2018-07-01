@@ -1,6 +1,6 @@
 ﻿namespace DatabaseFormApp
 {
-    partial class Form1
+    partial class DBForm
     {
         /// <summary>
         /// Required designer variable.
@@ -72,7 +72,8 @@
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.btnConnect);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "DatabaseFormApp";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
