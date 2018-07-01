@@ -13,7 +13,12 @@ namespace DatabaseFormApp
 {
     public partial class Form1 : Form
     {
-        MySqlConnection cnx = new MySqlConnection();
+        MySqlConnection cnx = new MySqlConnection("server=192.168.0.80; port=3306; userid=outlaw1; password=outlaw1; database=outlaw; Encrypt=false;");
+        MySqlCommand cmd = new MySqlCommand();
+        String query = "SELECT * FROM node";
+        MySqlDataReader reader;
+        // for instert/delete/update ie.. non-'select' queries
+        //MySqlDataReader queryResult = cmd.ExecuteQuery();
         public Form1()
         {
             InitializeComponent();
@@ -26,35 +31,47 @@ namespace DatabaseFormApp
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            cnx.ConnectionString = "server=192.168.0.80; port=3306; userid=outlaw1; password=outlaw1; database=outlaw; Encrypt=false;";
             //String query = string.Format("SELECT * FROM node");
-            String query = "SELECT * FROM node";
-            MySqlCommand cmd = new MySqlCommand(query, cnx);
-            cnx.Open();
-
-            //MessageBox.Show("connected...");
-
-            //MySqlDataReader queryResult = cmd.ExecuteQuery();
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                string id = (string)reader["nid"].ToString();
-                string nid = reader["nid"].ToString();
-                string type = reader["type"].ToString();
-                string uuid = reader["uuid"].ToString();
-
-                Console.WriteLine("string = {0}--{1}--{2}", nid, type, uuid);
+                cnx.Open();
+                //MessageBox.Show("connected...");
+                lblResult.Text = "Connected....";
+                cnx.Close();
             }
-            
+            catch
+            {
+                //MessageBox.Show("NOT connected...");
+                lblResult.Text = "NOT Connected....";
+            }
+        }
 
+        private void btnQuery_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cnx.Open();
+                cmd = new MySqlCommand(query, cnx);
+                reader = cmd.ExecuteReader();
 
-
-            //int id = (int)cmd.LastInsertedId;
-            //cmd.
-            //Console.WriteLine("id =", id);
-            cnx.Close();
-
-
+                StringBuilder sb = new StringBuilder();
+                while (reader.Read())
+                {
+                    string id = (string)reader["nid"].ToString();
+                    string nid = reader["nid"].ToString();
+                    string type = reader["type"].ToString();
+                    string uuid = reader["uuid"].ToString();
+                    string result = "string = " + nid + "--" + type + "--" + uuid;
+                    sb.Append(result + "\n");
+                }
+                lblResult.Text = sb.ToString();
+                cnx.Close();
+            }
+            catch
+            {
+                lblResult.Text = "Can't Execute Query";
+                //Console.WriteLine("Can't Execute Query...");
+            }
         }
     }
 }
