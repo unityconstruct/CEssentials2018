@@ -83,21 +83,12 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("Click on the LogIn button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
  testRunner.Then("Successful LogIN message should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Successful LogOut")]
-        public virtual void SuccessfulLogOut()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful LogOut", ((string[])(null)));
-#line 14
-this.ScenarioSetup(scenarioInfo);
-#line 15
+#line 13
  testRunner.When("User LogOut from the Application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 16
+#line 14
  testRunner.Then("Successful LogOut message should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 15
+ testRunner.Then("User closes browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -9,7 +9,24 @@ namespace Basics
         {
             //Survey.AskSurvey();
             //Passcode.AuthPasscode();
-            Run();
+
+            //Static access methods
+            Console.WriteLine("------BaseClass Static Method Call----------");
+            Basics.BaseClass.StaticPrintOut();
+
+            Console.WriteLine("------SubClass Static Method Calls----------");
+            Basics.BaseSubClass.StaticPrintOut();
+            Basics.BaseSubClass.StaticPrintOutSubClass();
+
+            //Instantiated methods
+            Console.WriteLine("------Instantiated SubClass &  Calls----------");
+            // calls BaseClass contructure, THEN SubClass Constructor
+            Basics.BaseSubClass sc = new Basics.BaseSubClass();
+            sc.InstancePrintOutSubClass();
+            sc.InstancePrintOut();
+            
+            Console.ReadLine();
+            //Run();
         }
 
         public static void Run()
