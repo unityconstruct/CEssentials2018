@@ -9,24 +9,8 @@ namespace Basics
         {
             //Survey.AskSurvey();
             //Passcode.AuthPasscode();
-
-            //Static access methods
-            Console.WriteLine("------BaseClass Static Method Call----------");
-            Basics.BaseClass.StaticPrintOut();
-
-            Console.WriteLine("------SubClass Static Method Calls----------");
-            Basics.BaseSubClass.StaticPrintOut();
-            Basics.BaseSubClass.StaticPrintOutSubClass();
-
-            //Instantiated methods
-            Console.WriteLine("------Instantiated SubClass &  Calls----------");
-            // calls BaseClass contructure, THEN SubClass Constructor
-            Basics.BaseSubClass sc = new Basics.BaseSubClass();
-            sc.InstancePrintOutSubClass();
-            sc.InstancePrintOut();
-            
+            Run();
             Console.ReadLine();
-            //Run();
         }
 
         public static void Run()
@@ -45,7 +29,13 @@ namespace Basics
 
             //Scope_Runner();
 
-            Book_Runner();
+            //Book_Runner();
+
+            //ClassesAndSubClasses_Runner();
+
+            DBConnections_Runner();
+
+
 
         }
 
@@ -144,7 +134,27 @@ namespace Basics
 
         }
 
+        private static void DBConnections_Runner()
+        {
+            DB.DBConnections.MySQLConxAndQuery();
+        }
 
+        private static void ClassesAndSubClasses_Runner()
+        {
+            //Static access methods
+            Console.WriteLine("------BaseClass Static Method Call----------");
+            Basics.BaseClass.StaticPrintOut();
 
+            Console.WriteLine("------SubClass Static Method Calls----------");
+            Basics.BaseSubClass.StaticPrintOut();
+            Basics.BaseSubClass.StaticPrintOutSubClass();
+
+            //Instantiated methods
+            Console.WriteLine("------Instantiated SubClass &  Calls----------");
+            // calls BaseClass contructure, THEN SubClass Constructor
+            Basics.BaseSubClass sc = new Basics.BaseSubClass();
+            sc.InstancePrintOutSubClass();
+            sc.InstancePrintOut();
+        }
     }
 }
