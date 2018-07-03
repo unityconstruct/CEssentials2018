@@ -9,7 +9,7 @@ Scenario: Successful Login with Valid Credentials
 	And Navigate to LogIn Page
 	When User enter 'UnityAdmin' and 'UnityAdmin@2017'
 	And Click on the LogIn button
-	Then Successful LogIN message should display
+	Then Successful LogIN message should display user 'UnityAdmin'
 	When User LogOut from the Application
 	Then Successful LogOut message should display
 	Then User closes browser

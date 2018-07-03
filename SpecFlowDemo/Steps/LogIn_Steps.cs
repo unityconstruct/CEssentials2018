@@ -46,31 +46,18 @@ namespace SpecFlowDemo
         [When(@"User LogOut from the Application")]
         public void WhenUserLogOutFromTheApplication()
         {
-            //System.Threading.Thread.Sleep(3000);
-            //driver.Url = ("http://www.unityconstruct.org/uc");
-            //driver.Navigate();
+
             HomePage_Actions.HomePage_Menu_Home_Click();
             HomePage_Actions.HomePage_Menu_Link_Logout_Click();
 
-            //driver.FindElement(By.XPath("//a[@href=/uc/")).Click();
 
-            
-            //bool b = driver.FindElement(By.XPath("//a[@href='/uc/user/logout']")).Enabled;
-            //Console.WriteLine("Logout link is displayed {0}", b);
-            //if (b) {
-            //    driver.FindElement(By.XPath("//a[@href='/uc/user/logout']")).Click();
-            //} else
-            //{
-            //    Console.WriteLine("Logout link is NOT displayed {0}");
-            //}
             System.Threading.Thread.Sleep(5000);
         }
 
-        [Then(@"Successful LogIN message should display")]
-        public void ThenSuccessfulLogINMessageShouldDisplay()
+        [Then(@"Successful LogIN message should display user '(.*)'")]
+        public void ThenSuccessfulLogINMessageShouldDisplayUser(string username)
         {
-            bool b = driver.FindElement(By.XPath("//h1[contains(.,'UnityAdmin')]")).Displayed;
-            //Console.WriteLine("H1 UserName is displayed {0}", b);
+            bool b = driver.FindElement(By.XPath("//h1[contains(.,'"+ username+"')]")).Displayed;
             Assert.True(b, "Login not successful, h1/username not found");
             
         }
@@ -91,9 +78,32 @@ namespace SpecFlowDemo
         {
             driver.Quit();
         }
+
+        public void TrashBin()
+        {
+            //From Home Page method
+            //System.Threading.Thread.Sleep(3000);
+            //driver.Url = ("http://www.unityconstruct.org/uc");
+            //driver.Navigate();
+
+
+            //From Logout method
+            //driver.FindElement(By.XPath("//a[@href=/uc/")).Click();
+            //bool b = driver.FindElement(By.XPath("//a[@href='/uc/user/logout']")).Enabled;
+            //Console.WriteLine("Logout link is displayed {0}", b);
+            //if (b) {
+            //    driver.FindElement(By.XPath("//a[@href='/uc/user/logout']")).Click();
+            //} else
+            //{
+            //    Console.WriteLine("Logout link is NOT displayed {0}");
+            //}
+
+
+            // Wait logic.. OK to use? Add to WebDriverUtils?
+            //int timeoutSec = 15000;
+            //WebDriverWait wait = new WebDriverWait(driver, System.TimeSpan.FromSeconds(timeoutSec));
+            //wait.Until((driver) => driver.FindElement(By.XPath("//a[@href='/uc/user/login']")).Displayed == true);
+            //wait.Until((driver) => driver.FindElement(By.XPath("//a[@href='/uc/user/login']")));
+        }
     }
 }
-//int timeoutSec = 15000;
-//WebDriverWait wait = new WebDriverWait(driver, System.TimeSpan.FromSeconds(timeoutSec));
-//wait.Until((driver) => driver.FindElement(By.XPath("//a[@href='/uc/user/login']")).Displayed == true);
-//wait.Until((driver) => driver.FindElement(By.XPath("//a[@href='/uc/user/login']")));

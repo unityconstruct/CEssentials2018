@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basics", "Survey\Basics.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeleniumFirst", "SeleniumFirst\SeleniumFirst.csproj", "{576F3451-F934-4F45-85E6-F3E71CA36E32}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BddSeleniumTest", "BddSeleniumTest\BddSeleniumTest.csproj", "{5680F668-A2D7-4E0E-93A3-35B931D332F8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProject.Specs", "MyProject.Specs\MyProject.Specs.csproj", "{FE769B9A-2FEE-4071-B03C-A670492239AB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlowDemo", "SpecFlowDemo\SpecFlowDemo.csproj", "{D21FAC18-D88D-4707-9721-A513B5AF9D67}"
@@ -40,10 +38,6 @@ Global
 		{576F3451-F934-4F45-85E6-F3E71CA36E32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{576F3451-F934-4F45-85E6-F3E71CA36E32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{576F3451-F934-4F45-85E6-F3E71CA36E32}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5680F668-A2D7-4E0E-93A3-35B931D332F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5680F668-A2D7-4E0E-93A3-35B931D332F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5680F668-A2D7-4E0E-93A3-35B931D332F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5680F668-A2D7-4E0E-93A3-35B931D332F8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FE769B9A-2FEE-4071-B03C-A670492239AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FE769B9A-2FEE-4071-B03C-A670492239AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE769B9A-2FEE-4071-B03C-A670492239AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
