@@ -47,5 +47,22 @@ namespace Basics.Basics
             Console.WriteLine("MethodInputArgs: with num1={0} and string1={1}...", num1, string1);
         }
 
+
+        public static void MethodOverloading(string s)
+        {
+
+        }
+        public static void MethodOverloading(int s)
+        {
+
+        }
+        public static void MethodOverloading(bool s)
+        {
+
+        }
+        public static void MethodOverloading(string s1, string s2)
+        {
+
+        }
     }
 }
