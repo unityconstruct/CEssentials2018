@@ -59,6 +59,7 @@ namespace Basics.Projects.EmployeeTrackerOO
                 }
             }
 
+            ShowGrade("Tom");
             //Output Employee Names and Scores
             foreach(var e in employees)
             {
@@ -93,6 +94,45 @@ namespace Basics.Projects.EmployeeTrackerOO
                         break;
                 }
             }
+        }
+
+        static void ShowGrade(string name)
+        {
+            ////Predicate logic
+            //var found = employees.Find(predicate);
+            //Console.WriteLine("Predicate: {0}'s Grade: {1}", found.Name, found.Score);
+
+            ////lambda logic
+            //var foundLambda = employees.Find((employee) =>
+            //{
+            //    return (employee.Name == "Jones");
+            //}
+            //);
+            //Console.WriteLine("Lambda: {0}'s Grade: {1}", foundLambda.Name, foundLambda.Score);
+
+            ////lambda2 logic without the parens around the object type
+            //var foundLambda2 = employees.Find(employee => {return (employee.Name == "Jones");});
+            //Console.WriteLine("Lambda2: {0}'s Grade: {1}", foundLambda2.Name, foundLambda2.Score);
+
+            ////lambda3 logic without return & parens for return & curly braces
+            //var foundLambda3 = employees.Find(employee => employee.Name == "Jones");
+            //Console.WriteLine("Lambda3: {0}'s Grade: {1}", foundLambda3.Name, foundLambda3.Score);
+
+            //lambda4 logic with passed argument name
+            var found = employees.Find(employee => employee.Name == name);
+            Console.WriteLine("lambda4: {0}'s Grade: {1}", found.Name, found.Score);
+
+        } 
+
+        static bool predicate(Employee employee)
+        {
+            //can return the condition instead of doing evail with if/then
+            return (employee.Name == "Jones");
+
+            //if (employee.Name == "Jones")
+            //    return true;
+            //else
+            //    return false;
         }
     }
 
