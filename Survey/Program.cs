@@ -16,7 +16,9 @@ namespace Basics
         private static void ValueAndReferenceTypesAndMemory_Runner()
         {
             Basics.ValueAndReferenceTypesAndMemory.ValueTypes();
-            Basics.ValueAndReferenceTypesAndMemory.ReferenceTypes();
+            Basics.ValueAndReferenceTypesAndMemory.ValueTypesWithOut();
+            Basics.ValueAndReferenceTypesAndMemory.ValueTypesWithRef();
+            //Basics.ValueAndReferenceTypesAndMemory.ReferenceTypes();
         }
         private static void EmployeeTracker_Runner()
         {
