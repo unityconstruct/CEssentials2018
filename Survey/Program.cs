@@ -8,47 +8,35 @@ namespace Basics
         static void Main(string[] args)
         {
             Run();
-            //Passcode.AuthPasscode();
-            //Console.ReadLine();
         }
-
 
         public static void Run()
         {
-
+            //Projects
+            //AuthPasscode_Runner();
             //GeometryTool_Runner();
-
             //Survey_Runner();
+            //EmployeeTracker_Runner();
 
-            EmployeeTracker_Runner();
-
-            //ValueAndReferenceTypesAndMemory_Runner();
-
+            //Basics
             //ConsoleWriteAndReadLine_Runner();
-
             //EvaluationsAndExpressions_Runner();
-
             //ConstantsAndEnumerations_Runner();
-
+            //ValueAndReferenceTypesAndMemory_Runner();
             //Loops_Runner();
-
             //Collections_Runner();
-
             //Methods_Runner();
-
             //DataTypes_Runner();
-
             //CharsAndStrings_Runner();
-
             //Scope_Runner();
-
             //Book_Runner();
-
             //ClassesAndSubClasses_Runner();
-
             //DBConnections_Runner();
+        }
 
-
+        private static void AuthPasscode_Runner()
+        {
+            Projects.Passcode.AuthPasscode();
         }
 
         private static void GeometryTool_Runner()
