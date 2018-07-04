@@ -18,7 +18,7 @@ namespace Basics.Projects.EmployeeTrackerOO
 
         public static void ProcessEmployeesWithList()
         {
-
+            Logger.Log("Tracker has started", 1, "EmployeeTracker");
             Payroll payroll = new Payroll();
             payroll.PayAll();
             
