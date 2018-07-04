@@ -14,7 +14,10 @@ namespace Basics.Projects.EmployeeTrackerOO
         //priority type & system that throws log msg
         public static void Log(string msg, string system = DefaultSystemName, int priority=1)
         {
-            Console.WriteLine("System: {0}, Priority: {1}, Msg: {2}", system , priority, system);
+            //String Formatting Syntax
+            //Console.WriteLine("StringFormatting: System: {0}, Priority: {1}, Msg: {2}", system , priority, msg);
+            //String Interpolation
+            Console.WriteLine($"String Interpolation: System: {system}, Priority: {priority}, Msg: {msg}");
         }
     }
 }

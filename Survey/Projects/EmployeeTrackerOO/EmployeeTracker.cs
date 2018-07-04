@@ -21,6 +21,7 @@ namespace Basics.Projects.EmployeeTrackerOO
             // system is optional now hthat 
             //Logger.Log("Tracker has started", "EmployeeTracker", 1);
             Logger.Log("Tracker has started");
+            Logger.Log("Using msg & priority", priority:0);
             Payroll payroll = new Payroll();
             payroll.PayAll();
             
@@ -30,7 +31,9 @@ namespace Basics.Projects.EmployeeTrackerOO
             {
                 try
                 {
+                    Logger.Log("Adding New Student..");
                     var emp = new Employee();
+
 
                     // Assign Values to temp employee object
                     emp.Name = Util.EmployeeTrackerUtils.Ask("Employee Name: ");
