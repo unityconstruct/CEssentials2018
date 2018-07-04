@@ -13,16 +13,27 @@ namespace Basics
             //Console.ReadLine();
         }
 
+        private static void ValueAndReferenceTypesAndMemory_Runner()
+        {
+            Basics.ValueAndReferenceTypesAndMemory.ValueTypes();
+            Basics.ValueAndReferenceTypesAndMemory.ReferenceTypes();
+        }
         private static void EmployeeTracker_Runner()
         {
             //Projects.EmployeeScoreTracker.ProcessEmployees();
             //Projects.EmployeeScoreTracker.ProcessEmployeesWithList();
+
             Projects.EmployeeTrackerOO.EmployeeTracker.ProcessEmployeesWithList();
+            
+            //Projects.EmployeeTrackerOO.EmployeeTracker.Import();
         }
 
         public static void Run()
         {
-            EmployeeTracker_Runner();
+            ValueAndReferenceTypesAndMemory_Runner();
+
+            //EmployeeTracker_Runner();
+
 
             //ConsoleWriteAndReadLine_Runner();
 
