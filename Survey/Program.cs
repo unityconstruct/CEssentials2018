@@ -15,9 +15,12 @@ namespace Basics
 
         public static void Run()
         {
-            Survey_Runner();
 
-            //EmployeeTracker_Runner();
+            //GeometryTool_Runner();
+
+            //Survey_Runner();
+
+            EmployeeTracker_Runner();
 
             //ValueAndReferenceTypesAndMemory_Runner();
 
@@ -46,6 +49,11 @@ namespace Basics
             //DBConnections_Runner();
 
 
+        }
+
+        private static void GeometryTool_Runner()
+        {
+            Projects.GeometryTool.GeometryTool.Run();
         }
 
         private static void ValueAndReferenceTypesAndMemory_Runner()
