@@ -18,7 +18,9 @@ namespace Basics.Projects.EmployeeTrackerOO.Util
             try
             {
                 System.Console.WriteLine(question);
-                return int.Parse(Console.ReadLine());
+                // original before the extension method toInt()
+                //return int.Parse(Console.ReadLine());
+                return Console.ReadLine().toInt();
             }
             catch (Exception)
             {

@@ -18,7 +18,9 @@ namespace Basics.Projects.EmployeeTrackerOO
 
         public static void ProcessEmployeesWithList()
         {
-            Logger.Log("Tracker has started", 1, "EmployeeTracker");
+            // system is optional now hthat 
+            //Logger.Log("Tracker has started", "EmployeeTracker", 1);
+            Logger.Log("Tracker has started");
             Payroll payroll = new Payroll();
             payroll.PayAll();
             
@@ -43,10 +45,11 @@ namespace Basics.Projects.EmployeeTrackerOO
                     employees.Add(emp);
                     Employee.Count++;
                     Console.WriteLine("Number of Empployees = {0}", Employee.Count);
-
+                    ShowGrade(emp.Name);
                     //Loop?
                     Console.WriteLine("Add another Employee? y/n");
                     adding = (Console.ReadLine().ToLower() == "y") ? true : false;
+
                 }
                 catch (FormatException msg)
                 {
@@ -57,9 +60,10 @@ namespace Basics.Projects.EmployeeTrackerOO
                     Console.WriteLine("Error Adding Student, Please Retry..");
                     //throw;
                 }
+                
             }
 
-            ShowGrade("Tom");
+            
             //Output Employee Names and Scores
             foreach(var e in employees)
             {

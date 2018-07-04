@@ -21,6 +21,7 @@ namespace Basics.Projects.EmployeeTrackerOO
             payees.Add(new Manager());
             payees.Add(new Manager());
             payees.Add(new Executive());
+            Logger.Log("Payroll has started","Payroll");
         }
 
 
@@ -30,6 +31,7 @@ namespace Basics.Projects.EmployeeTrackerOO
             {
                 payee.Pay();
             }
+            Logger.Log("PayAll Completed","Payroll",2);
         }
     }
 }
