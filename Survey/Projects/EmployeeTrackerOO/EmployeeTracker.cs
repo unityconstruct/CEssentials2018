@@ -21,10 +21,10 @@ namespace Basics.Projects.EmployeeTrackerOO
                     var emp = new Employee();
 
                     emp.Name = Util.EmployeeTrackerUtils.Ask("Employee Name: ");
-                    emp.Score = int.Parse(Util.EmployeeTrackerUtils.Ask("Employee Score: "));
+                    emp.Score = Util.EmployeeTrackerUtils.AskInt("Employee Score: ");
                     emp.Birthday = Util.EmployeeTrackerUtils.Ask("Employee Birthday: ");
                     emp.Address = Util.EmployeeTrackerUtils.Ask("Employee Address: ");
-                    emp.Phone = double.Parse(Util.EmployeeTrackerUtils.Ask("Employee Phone: "));
+                    emp.Phone = Util.EmployeeTrackerUtils.AskDouble("Employee Phone: ");
 
                     //Push emp object to the employees List with *.Add(emp)
                     employees.Add(emp);
@@ -35,9 +35,9 @@ namespace Basics.Projects.EmployeeTrackerOO
                     Console.WriteLine("Add another Employee? y/n");
                     adding = (Console.ReadLine().ToLower() == "y") ? true : false;
                 }
-                catch (FormatException)
+                catch (FormatException msg)
                 {
-                    Console.WriteLine("Input was not a number");
+                    Console.WriteLine(msg.Message);
                 }
                 catch (Exception)
                 {

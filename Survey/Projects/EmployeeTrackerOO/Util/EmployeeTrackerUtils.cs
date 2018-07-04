@@ -11,5 +11,33 @@ namespace Basics.Projects.EmployeeTrackerOO.Util
             System.Console.WriteLine(question);
             return Console.ReadLine();
         }
+
+        public static int AskInt(string question)
+        {
+
+            try
+            {
+                System.Console.WriteLine(question);
+                return int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                // throws the error message up to calling methods
+                throw new FormatException("Input was not a number");
+            }
+        }
+        public static double AskDouble(string question)
+        {
+            try
+            {
+                System.Console.WriteLine(question);
+                return double.Parse(Console.ReadLine());
+            }
+            catch(Exception)
+            {
+                // throws the error message up to calling methods
+                throw new FormatException("Input was not a number");
+            }
+        }
     }
 }
