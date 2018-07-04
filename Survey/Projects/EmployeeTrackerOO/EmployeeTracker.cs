@@ -16,23 +16,12 @@ namespace Basics.Projects.EmployeeTrackerOO
             while (adding)
             {
                 var emp = new Employee();
-                Console.WriteLine("Employee Name: ");
-                emp.Name = Console.ReadLine();
 
-                Console.WriteLine("Employee Score: ");
-                emp.Score = int.Parse(Console.ReadLine());
-
-                Console.WriteLine("Employee Birthday: ");
-                emp.Birthday = Console.ReadLine();
-
-                Console.WriteLine("Employee Address: ");
-                emp.Address = Console.ReadLine();
-
-                Console.WriteLine("Employee Phone: ");
-                // set using property set
-                emp.Phone = double.Parse(Console.ReadLine());
-                //set using function
-                //emp.SetPhone(double.Parse(Console.ReadLine()));
+                emp.Name = Util.EmployeeTrackerUtils.Ask("Employee Name: ");
+                emp.Score = int.Parse(Util.EmployeeTrackerUtils.Ask("Employee Score: "));
+                emp.Birthday = Util.EmployeeTrackerUtils.Ask("Employee Birthday: ");
+                emp.Address = Util.EmployeeTrackerUtils.Ask("Employee Address: ");
+                emp.Phone = double.Parse(Util.EmployeeTrackerUtils.Ask("Employee Phone: "));
 
                 //Push emp object to the employees List with *.Add(emp)
                 employees.Add(emp);
@@ -43,18 +32,11 @@ namespace Basics.Projects.EmployeeTrackerOO
                 adding = (Console.ReadLine().ToLower() == "y") ? true : false;
             }
 
-
             //Output Employee Names and Scores
             foreach(var e in employees)
             {
                 Console.WriteLine("Employee Name: {0} --- Employee Score: {1}", e.Name, e.Score);
             }
-
-            //decprecated by foreach
-            //for (int i = 0; i < employees.Count; i++)
-            //{
-            //    Console.WriteLine("Employee Name: {0} --- Employee Score: {1}", employees[i].Name, employees[i].Score);
-            //}
         }
     }
 
@@ -69,10 +51,21 @@ namespace Basics.Projects.EmployeeTrackerOO
         public int Score;
         public string Birthday;
         public string Address;
+        private double phone; //Properties have get/sets
 
-        //Properties have get/sets
-        private double phone;
+        public Employee()
+        {
 
+        }
+
+        public Employee(string name, int score, string birthday, string address, double phone) //constructor
+        {
+            Name = name;
+            Score = score;
+            Birthday = birthday;
+            Address = address;
+            Phone = phone;
+        }
         public double Phone
         {
             set { phone = value; } 
