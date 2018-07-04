@@ -4,29 +4,38 @@ using System.Text;
 
 namespace Basics.Projects.EmployeeTrackerOO
 {
+    enum Business
+    {
+        Apple = 0,
+        Microsoft = 1,
+        Samsung = 2
+    }
+
     class EmployeeTracker
     {
+        // define fields
+        public static List<Employee> employees = new List<Employee>();
+
         public static void ProcessEmployeesWithList()
         {
-            // define fields
-            List<Employee> employees = new List<Employee>();
-
             //Input Employee Names and Scores
             bool adding = true;
             while (adding)
             {
-
                 try
                 {
                     var emp = new Employee();
 
+                    // Assign Values to temp employee object
                     emp.Name = Util.EmployeeTrackerUtils.Ask("Employee Name: ");
-                    emp.Score = Util.EmployeeTrackerUtils.AskInt("Employee Score: ");
+                    emp.Score = Util.EmployeeTrackerUtils.AskInt("Employee Score:");
+                    emp.Business = (Business)Util.EmployeeTrackerUtils.AskInt("Business Index Number: " +
+                        "\n0:Apple \n1:Microsoft \n2:Samsung");
                     emp.Birthday = Util.EmployeeTrackerUtils.Ask("Employee Birthday: ");
                     emp.Address = Util.EmployeeTrackerUtils.Ask("Employee Address: ");
                     emp.Phone = Util.EmployeeTrackerUtils.AskDouble("Employee Phone: ");
 
-                    //Push emp object to the employees List with *.Add(emp)
+                    //Push temp employee object to the [employees List] with *.Add(emp)
                     employees.Add(emp);
                     Employee.Count++;
                     Console.WriteLine("Number of Empployees = {0}", Employee.Count);
@@ -44,7 +53,6 @@ namespace Basics.Projects.EmployeeTrackerOO
                     Console.WriteLine("Error Adding Student, Please Retry..");
                     //throw;
                 }
-
             }
 
             //Output Employee Names and Scores
@@ -52,6 +60,7 @@ namespace Basics.Projects.EmployeeTrackerOO
             {
                 Console.WriteLine("Employee Name: {0} --- Employee Score: {1}", e.Name, e.Score);
             }
+            Exports();
         }
 
         public static void Import()
@@ -60,7 +69,30 @@ namespace Basics.Projects.EmployeeTrackerOO
             var importedEmployee = new Employee("ImportedEmployee", 12, "birthday", "Address", 1234567890);
            // Console.WriteLine(importedEmployee.Name);
         }
+
+        public static void Exports()
+        {
+            foreach(var employee in employees)
+            {
+                switch (employee.Business)
+                {
+                    case Business.Apple:
+                        Console.WriteLine("Exporting to Apple");
+                        break;
+                    case Business.Microsoft:
+                        Console.WriteLine("Exporting to Microsoft");
+                        break;
+                    case Business.Samsung:
+                        Console.WriteLine("Exporting to Samsung");
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
     }
+
+
 
 
     class Member
@@ -84,6 +116,7 @@ namespace Basics.Projects.EmployeeTrackerOO
         // Fields are at class-level w/out get/sets
         public int Score;
         public string Birthday;
+        public Business  Business; //index of the business name
 
         public Employee()
         {
