@@ -15,28 +15,36 @@ namespace Basics.Projects.EmployeeTrackerOO
             bool adding = true;
             while (adding)
             {
-                var emp = new Employee();
 
-                emp.Name = Util.EmployeeTrackerUtils.Ask("Employee Name: ");
-                // Udpated for error handling on int.Parse
-                emp.Score = int.Parse(Util.EmployeeTrackerUtils.Ask("Employee Score: "));
-                bool result = int.TryParse(Util.EmployeeTrackerUtils.Ask("Employee Score: "), out emp.Score);
-                if (!result)
+                try
                 {
-                    Console.WriteLine("Age was not an error");
+                    var emp = new Employee();
+
+                    emp.Name = Util.EmployeeTrackerUtils.Ask("Employee Name: ");
+                    emp.Score = int.Parse(Util.EmployeeTrackerUtils.Ask("Employee Score: "));
+                    emp.Birthday = Util.EmployeeTrackerUtils.Ask("Employee Birthday: ");
+                    emp.Address = Util.EmployeeTrackerUtils.Ask("Employee Address: ");
+                    emp.Phone = double.Parse(Util.EmployeeTrackerUtils.Ask("Employee Phone: "));
+
+                    //Push emp object to the employees List with *.Add(emp)
+                    employees.Add(emp);
+                    Employee.Count++;
+                    Console.WriteLine("Number of Empployees = {0}", Employee.Count);
+
+                    //Loop?
+                    Console.WriteLine("Add another Employee? y/n");
+                    adding = (Console.ReadLine().ToLower() == "y") ? true : false;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Input was not a number");
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Error Adding Student, Please Retry..");
+                    //throw;
                 }
 
-                emp.Birthday = Util.EmployeeTrackerUtils.Ask("Employee Birthday: ");
-                emp.Address = Util.EmployeeTrackerUtils.Ask("Employee Address: ");
-                emp.Phone = double.Parse(Util.EmployeeTrackerUtils.Ask("Employee Phone: "));
-
-                //Push emp object to the employees List with *.Add(emp)
-                employees.Add(emp);
-                Employee.Count++;
-                Console.WriteLine("Number of Empployees = {0}", Employee.Count);
-
-                Console.WriteLine("Add another Employee? y/n");
-                adding = (Console.ReadLine().ToLower() == "y") ? true : false;
             }
 
             //Output Employee Names and Scores
