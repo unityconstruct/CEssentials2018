@@ -18,6 +18,10 @@ namespace Basics.Projects.EmployeeTrackerOO
 
         public static void ProcessEmployeesWithList()
         {
+
+            Payroll payroll = new Payroll();
+            payroll.PayAll();
+            
             //Input Employee Names and Scores
             bool adding = true;
             while (adding)
@@ -131,17 +135,5 @@ namespace Basics.Projects.EmployeeTrackerOO
 
     }
 
-    class Manager : Member
-    {
-        public static int Count = 0;
 
-        public string Name;
-        public string Address;
-        public string Dept;
-
-        public Manager()
-        {
-
-        }
-    }
 }

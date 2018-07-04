@@ -8,34 +8,18 @@ namespace Basics
         static void Main(string[] args)
         {
             Run();
-            //Projects.Survey.AskSurvey();
             //Passcode.AuthPasscode();
             //Console.ReadLine();
         }
 
-        private static void ValueAndReferenceTypesAndMemory_Runner()
-        {
-            Basics.ValueAndReferenceTypesAndMemory.ValueTypes();
-            Basics.ValueAndReferenceTypesAndMemory.ValueTypesWithOut();
-            Basics.ValueAndReferenceTypesAndMemory.ValueTypesWithRef();
-            //Basics.ValueAndReferenceTypesAndMemory.ReferenceTypes();
-        }
-        private static void EmployeeTracker_Runner()
-        {
-            //Projects.EmployeeScoreTracker.ProcessEmployees();
-            //Projects.EmployeeScoreTracker.ProcessEmployeesWithList();
-
-            Projects.EmployeeTrackerOO.EmployeeTracker.ProcessEmployeesWithList();
-            
-            //Projects.EmployeeTrackerOO.EmployeeTracker.Import();
-        }
 
         public static void Run()
         {
-            ValueAndReferenceTypesAndMemory_Runner();
+            Survey_Runner();
 
             //EmployeeTracker_Runner();
 
+            //ValueAndReferenceTypesAndMemory_Runner();
 
             //ConsoleWriteAndReadLine_Runner();
 
@@ -62,6 +46,29 @@ namespace Basics
             //DBConnections_Runner();
 
 
+        }
+
+        private static void ValueAndReferenceTypesAndMemory_Runner()
+        {
+            Basics.ValueAndReferenceTypesAndMemory.ValueTypes();
+            Basics.ValueAndReferenceTypesAndMemory.ValueTypesWithOut();
+            Basics.ValueAndReferenceTypesAndMemory.ValueTypesWithRef();
+            //Basics.ValueAndReferenceTypesAndMemory.ReferenceTypes();
+        }
+
+        private static void EmployeeTracker_Runner()
+        {
+            //Projects.EmployeeScoreTracker.ProcessEmployees();
+            //Projects.EmployeeScoreTracker.ProcessEmployeesWithList();
+
+            Projects.EmployeeTrackerOO.EmployeeTracker.ProcessEmployeesWithList();
+
+            //Projects.EmployeeTrackerOO.EmployeeTracker.Import();
+        }
+
+        private static void Survey_Runner()
+        {
+            Projects.Survey.Survey.AskSurvey();
         }
 
         private static void ConsoleWriteAndReadLine_Runner()
@@ -122,7 +129,6 @@ namespace Basics
             Basics.Collections.ArrayStrings();
             Basics.Collections.ArrayInt();
         }
-
 
         private static void ConstantsAndEnumerations_Runner()
         {
@@ -196,7 +202,6 @@ namespace Basics
             sc.InstancePrintOutSubClass();
             sc.InstancePrintOut();
         }
-
 
     }
 }

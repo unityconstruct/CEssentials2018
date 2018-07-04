@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Basics.Projects
+namespace Basics.Projects.Survey
 {
 
     public class Data
@@ -30,23 +30,33 @@ namespace Basics.Projects
     }
     public class Survey
     {
+        public static event Action Triggered;
         public static void AskSurvey()
         {
-            Data thisData = new Data();
+            Stats stats = new Stats();
+            stats.Start();
+
+
+            Data data = new Data();
 
             Console.WriteLine("What is your name?");
-            thisData.Name = TryAnswer();
+            data.Name = TryAnswer();
 
             Console.WriteLine("What is your age?");
-            thisData.Age = int.Parse(TryAnswer());
+            data.Age = int.Parse(TryAnswer());
 
             Console.WriteLine("What is your birth month?");
-            thisData.Month = TryAnswer();
+            data.Month = TryAnswer();
+
+            //if(Triggered != null)
+            //{
+            //    Triggered();
+            //}
+
+            Triggered?.Invoke();
 
 
-
-
-            thisData.Display();
+            data.Display();
         }
 
         public static string TryAnswer()
