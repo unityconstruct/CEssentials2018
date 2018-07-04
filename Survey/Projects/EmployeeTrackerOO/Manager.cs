@@ -6,11 +6,7 @@ namespace Basics.Projects.EmployeeTrackerOO
 {
     class Manager : Member, IPayee
     {
-        public static int Count = 0;
-
-        public string Name;
-        public string Address;
-        public string Dept;
+        public string Dept { get; set; }
 
         public Manager()
         {

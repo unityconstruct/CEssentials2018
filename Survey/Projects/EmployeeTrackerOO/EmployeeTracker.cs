@@ -101,26 +101,21 @@ namespace Basics.Projects.EmployeeTrackerOO
 
     class Member
     {
-        public string Name;
-        public string Address;
-        protected double phone;
-
-        public double Phone
-        {
-            set { phone = value; }
-        }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public double Phone { get; set; }
     }
 
     class Employee : Member
     {
         // ONE Field for ENTIRE CLASS, no matter how many instances exist
         // inits to 0 when CONSTUCTOR CALLED on first reference in the program
-        public static int Count = 0; 
+        public static int Count { get; set; } = 0; 
 
         // Fields are at class-level w/out get/sets
-        public int Score;
-        public string Birthday;
-        public Business  Business; //index of the business name
+        public int Score { get; set; }
+        public string Birthday { get; set; }
+        public Business Business { get; set; } //index of the business name
 
         public Employee()
         {
