@@ -26,10 +26,16 @@ namespace Basics.Basics
         public static void ScopeInLoops()
         {
             //int k = 1;
-            //for(int i = 1; i<10; i++)
+            //try
             //{
-            //    // causes error
-            //    int k = 2; 
+            //    for (int i = 1; i < 10; i++)
+            //    {
+            //        // causes compile error
+            //        int k = 2;
+            //    }
+            //} catch
+            //{
+            //    Console.WriteLine("K is already assigned before the for loop");
             //}
         }
 

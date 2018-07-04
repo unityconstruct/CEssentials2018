@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Basics
+namespace Basics.Projects
 {
     public class Passcode
     {

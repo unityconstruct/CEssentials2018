@@ -1,5 +1,5 @@
 ﻿using System;
-using Basics;
+
 
 namespace Basics
 {
@@ -7,19 +7,32 @@ namespace Basics
     {
         static void Main(string[] args)
         {
-            //Survey.AskSurvey();
-            //Passcode.AuthPasscode();
             Run();
-            Console.ReadLine();
+            //Projects.Survey.AskSurvey();
+            //Passcode.AuthPasscode();
+            //Console.ReadLine();
+        }
+
+        private static void EmployeeTracker_Runner()
+        {
+            //Projects.EmployeeScoreTracker.ProcessEmployees();
+            //Projects.EmployeeScoreTracker.ProcessEmployeesWithList();
+            Projects.EmployeeTrackerOO.EmployeeTracker.ProcessEmployeesWithList();
         }
 
         public static void Run()
         {
+            EmployeeTracker_Runner();
+
+            //ConsoleWriteAndReadLine_Runner();
+
             //EvaluationsAndExpressions_Runner();
 
             //ConstantsAndEnumerations_Runner();
 
             //Loops_Runner();
+
+            //Collections_Runner();
 
             //Methods_Runner();
 
@@ -33,10 +46,15 @@ namespace Basics
 
             //ClassesAndSubClasses_Runner();
 
-            DBConnections_Runner();
+            //DBConnections_Runner();
 
 
+        }
 
+        private static void ConsoleWriteAndReadLine_Runner()
+        {
+            Basics.WriteAndReadLine.ConsoleWriteLine();
+            Basics.WriteAndReadLine.ConsoleReadLine();
         }
 
         private static void Book_Runner()
@@ -83,6 +101,15 @@ namespace Basics
             Basics.Loops.LoopContinue();
             Basics.Loops.LoopBreak();
         }
+
+        private static void Collections_Runner()
+        {
+            Basics.Collections.ArraySingleDimension();
+            Basics.Collections.ArrayChar();
+            Basics.Collections.ArrayStrings();
+            Basics.Collections.ArrayInt();
+        }
+
 
         private static void ConstantsAndEnumerations_Runner()
         {
@@ -156,5 +183,7 @@ namespace Basics
             sc.InstancePrintOutSubClass();
             sc.InstancePrintOut();
         }
+
+
     }
 }

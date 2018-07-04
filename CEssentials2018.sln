@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtoClient", "ProtoClient\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseFormApp", "DatabaseFormApp\DatabaseFormApp.csproj", "{4E6F0F70-A639-45A9-8354-1E0DD3DDA89C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Essentials2017", "Essentials2017\Essentials2017.csproj", "{EF5CF559-E7B7-474F-9622-A342BD177456}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,6 +68,10 @@ Global
 		{4E6F0F70-A639-45A9-8354-1E0DD3DDA89C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E6F0F70-A639-45A9-8354-1E0DD3DDA89C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E6F0F70-A639-45A9-8354-1E0DD3DDA89C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF5CF559-E7B7-474F-9622-A342BD177456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF5CF559-E7B7-474F-9622-A342BD177456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF5CF559-E7B7-474F-9622-A342BD177456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF5CF559-E7B7-474F-9622-A342BD177456}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
