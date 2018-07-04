@@ -29,10 +29,15 @@ namespace Basics.Projects.EmployeeTrackerOO
                 emp.Address = Console.ReadLine();
 
                 Console.WriteLine("Employee Phone: ");
+                // set using property set
                 emp.Phone = double.Parse(Console.ReadLine());
+                //set using function
+                //emp.SetPhone(double.Parse(Console.ReadLine()));
 
                 //Push emp object to the employees List with *.Add(emp)
                 employees.Add(emp);
+                Employee.Count++;
+                Console.WriteLine("Number of Empployees = {0}", Employee.Count);
 
                 Console.WriteLine("Add another Employee? y/n");
                 adding = (Console.ReadLine().ToLower() == "y") ? true : false;
@@ -55,10 +60,29 @@ namespace Basics.Projects.EmployeeTrackerOO
 
     class Employee
     {
+        // ONE Field for ENTIRE CLASS, no matter how many instances exist
+        // inits to 0 when CONSTUCTOR CALLED on first reference in the program
+        public static int Count = 0; 
+
+        // Fields are at class-level w/out get/sets
         public string Name;
         public int Score;
         public string Birthday;
         public string Address;
-        public double Phone;
+
+        //Properties have get/sets
+        private double phone;
+
+        public double Phone
+        {
+            set { phone = value; } 
+        }
+
+
+
+        public void SetPhone(double number)
+        {
+            phone = number;
+        }
     }
 }
